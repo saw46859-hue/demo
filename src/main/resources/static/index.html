@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>用户注册表单 (Bulma 风格)</title>
+    <!-- 引入 Bulma CSS 框架 CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+</head>
+<body class="has-background-light" style="min-height: 100vh; padding: 2rem 0;">
+
+<div class="container">
+    <div class="columns is-centered">
+        <div class="column is-half">
+            <!-- Bulma 的 box 容器卡片 -->
+            <div class="box">
+                <h2 class="title is-4 has-text-centered has-text-primary">用户信息录入表单</h2>
+
+                <!-- 表单提交：向 /submit 发送 POST 请求 -->
+                <form action="/submit" method="post">
+
+                    <!-- 1. text 文本框：用户名 -->
+                    <div class="field">
+                        <label class="label">1. 用户名 (Text)</label>
+                        <div class="control">
+                            <input class="input" type="text" name="username" placeholder="请输入用户名" required>
+                        </div>
+                    </div>
+
+                    <!-- 2. password 密码框 -->
+                    <div class="field">
+                        <label class="label">2. 密码 (Password)</label>
+                        <div class="control">
+                            <input class="input" type="password" name="password" placeholder="请输入密码" required>
+                        </div>
+                    </div>
+
+                    <!-- 3. email 邮箱 -->
+                    <div class="field">
+                        <label class="label">3. 邮箱 (Email)</label>
+                        <div class="control">
+                            <input class="input" type="email" name="email" placeholder="example@qq.com">
+                        </div>
+                    </div>
+
+                    <!-- 4. tel 手机号 -->
+                    <div class="field">
+                        <label class="label">4. 手机号 (Tel)</label>
+                        <div class="control">
+                            <input class="input" type="tel" name="phone" placeholder="13800000000">
+                        </div>
+                    </div>
+
+                    <!-- 5. number 数字：年龄 -->
+                    <div class="field">
+                        <label class="label">5. 年龄 (Number)</label>
+                        <div class="control">
+                            <input class="input" type="number" name="age" min="1" max="120" placeholder="18">
+                        </div>
+                    </div>
+
+                    <!-- 6. radio 单选框：性别 -->
+                    <div class="field">
+                        <label class="label">6. 性别 (Radio)</label>
+                        <div class="control">
+                            <label class="radio">
+                                <input type="radio" name="gender" value="男" checked> 男
+                            </label>
+                            <label class="radio">
+                                <input type="radio" name="gender" value="女"> 女
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- 7. checkbox 多选框：爱好 -->
+                    <div class="field">
+                        <label class="label">7. 爱好 (Checkbox - 可多选)</label>
+                        <div class="control">
+                            <label class="checkbox mr-2">
+                                <input type="checkbox" name="hobbies" value="编程"> 编程
+                            </label>
+                            <label class="checkbox mr-2">
+                                <input type="checkbox" name="hobbies" value="游戏"> 游戏
+                            </label>
+                            <label class="checkbox mr-2">
+                                <input type="checkbox" name="hobbies" value="运动"> 运动
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" name="hobbies" value="音乐"> 音乐
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- 8. select 下拉选择框：城市 -->
+                    <div class="field">
+                        <label class="label">8. 所在城市 (Select)</label>
+                        <div class="control">
+                            <div class="select is-fullwidth">
+                                <select name="city">
+                                    <option value="北京">北京</option>
+                                    <option value="上海">上海</option>
+                                    <option value="广州">广州</option>
+                                    <option value="深圳">深圳</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 9. date 日期：出生日期 -->
+                    <div class="field">
+                        <label class="label">9. 出生日期 (Date)</label>
+                        <div class="control">
+                            <input class="input" type="date" name="birthday">
+                        </div>
+                    </div>
+
+                    <!-- 10. textarea 文本域：个人简介 -->
+                    <div class="field">
+                        <label class="label">10. 个人简介 (Textarea)</label>
+                        <div class="control">
+                            <textarea class="textarea" name="bio" placeholder="请简要介绍你自己..."></textarea>
+                        </div>
+                    </div>
+
+                    <!-- 提交按钮 -->
+                    <div class="field mt-5">
+                        <div class="control">
+                            <button type="submit" class="button is-primary is-fullwidth">提交表单数据</button>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
